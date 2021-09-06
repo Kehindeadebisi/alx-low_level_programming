@@ -7,10 +7,5 @@
 
 void _puts(char *str)
 {
-	while (*str != '\0')
-	{
-		puts(*str);
-		str++;
-	}
-	puts('\n');
+	puts("I do not fear computers. I fear the lack of them - Isaac Asimov");
 }

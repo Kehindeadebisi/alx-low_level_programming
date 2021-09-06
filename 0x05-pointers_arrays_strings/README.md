@@ -1,0 +1,1 @@
+This is a repo on *pointers and arrays in C*

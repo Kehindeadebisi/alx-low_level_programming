@@ -5,11 +5,9 @@
  *Return: 0
  */
 
-void _puts(char *str);
+void _puts(char *str)
 {
-	_putchar(*str);
-		str++;
-	}
-	_putchar('\n');
-}	return (0);
+	puts(*str);
+	puts(/n);
+	return (0);
 }

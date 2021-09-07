@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * print_array - Print array upto n elements
  * @a: Array to be read from

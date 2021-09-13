@@ -10,13 +10,22 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i, sum1 = 0, sum2 = 0;
+	int i = 0;
+	int j = size - 1;
+	long int result1 = 0;
+	long int result2 = 0;
 
-	for (i = 0; i < size; i++)
+	while (i < (size * size))
 	{
-		sum1 += a[(size + 1) * i];
-		sum2 += a[(size - 1) * (i + 1)];
+		result1 += *(a + i);
+		i += (size + 1);
 	}
+	printf("%ld", result1);
 
-	printf("%d, %d/n", sum1, sum2);
+	while (j < (size * size) - 1)
+	{
+		result2 += *(a + j);
+		j += (size - 1);
+	}
+	printf(", %ld\n", result2);
 }

@@ -9,24 +9,24 @@
 
 int is_prime_number(int n)
 {
-	return (check_prime(n, 1));
+	return (get_prime(n, 2));
 }
 
 /**
- *check_prime - checks if number is prime
- *@n: number
- *@i: iteration
- *Return: 1 if prime
+ * get_prime - Get the square root recursively
+ * @n: Number to evaluate if it is a prime number
+ * @i: Iterator
+ *
+ * Return: 1 - Prime number | 0 - Not prime number.
  */
-
-int check_prime(int n, int i)
+int get_prime(int n, int i)
 {
-	if (n <= 1)
+	if (n < 2)
 		return (0);
-
-	if (n % i == 0 && i > 1)
+	else if (n % i == 0 && i != n)
 		return (0);
-
-	if ((n / i) < i)
+	else if (i == n)
 		return (1);
+
+	return (get_prime(n, i + 1));
 }

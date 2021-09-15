@@ -9,25 +9,25 @@
 
 int _sqrt_recursion(int n)
 {
-	return (_sqrt(n, 1));
+	if (n > 0)
+		return (get_sqrt(n, 1));
+	else
+		return (-1);
 }
 
 /**
-  * _sqrt - Calculates natural square root
-  * @n: number to calculate the square root
-  * @i: iterate number
-  *
-  * Return: the natural square root
-  */
-int _sqrt(int n, int i)
+ * get_sqrt - Get the square root recursively
+ * @n: Number to get the square root
+ * @sqr: Square root of the number
+ *
+ * Return: Sqaure root of a number.
+ */
+int get_sqrt(int n, int sqr)
 {
-	int sqrt = i * i;
-
-	if (sqrt > n)
+	if (sqr * sqr == n)
+		return (sqr);
+	else if (sqr >= n)
 		return (-1);
 
-	if (sqrt == n)
-		return (i);
-
-	return (_sqrt(n, i + 1));
+	return (get_sqrt(n, sqr + 1));
 }

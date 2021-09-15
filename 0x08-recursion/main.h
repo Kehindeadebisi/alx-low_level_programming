@@ -13,5 +13,6 @@ int is_palindrome(char *s);
 int get_sqrt(int, int);
 int get_prime(int, int);
 int get_palindrome(char *, int, int, int);
-
+int strlengr(char *a, int i)
+	
 #endif

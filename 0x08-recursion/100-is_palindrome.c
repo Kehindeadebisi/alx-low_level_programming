@@ -1,48 +1,51 @@
 #include "main.h"
 
+
 /**
- * is_palindrome - Function that returns if the string is a palindrome
- * @s: Pointer to a string
- *
- * Return: 1 - Palindrome | 0 - Not palindrome.
+ * _strlen_recursion - size
+ * @s: pointer to string params
+ * Return: recursion
  */
-int is_palindrome(char *s)
+
+int _strlen_recursion(char *s)
 {
-	return (get_palindrome(s, 0, strlengr(s, 0) - 1, strlengr(s, 0)));
-}
-/**
- * get_palindrome - Function that returns if the string is a palindrome
- * @s: Pointer to a string
- * @i: Iterator
- * @j: Iterator
- * @k: Length of the string
- *
- * Return: 1 - Palindrome | 0 - Not palindrome.
- */
-int get_palindrome(char *s, int i, int j, int k)
-{
-	if (k == 0)
-		return (1);
-	if (*(s + i) == *(s + j))
+	if (!*s)
 	{
-		if (j == 0)
-			return (1);
-		else
-			return (get_palindrome(s, ++i, --j, k));
+		return (0);
+	}
+	return (1 + _strlen_recursion(++s));
+}
+
+/**
+ * p1 - palindrome
+ * @s: pointer to string
+ * @l: position
+ * Return: boolena
+ */
+
+int p1(char *s, int l)
+{
+	if (l < 1)
+	{
+		return (1);
+	}
+
+	if (*s == *(s + l))
+	{
+		return (p1(s + 1, l - 2));
 	}
 	return (0);
 }
 
 /**
- * strlengr - Function that gets the length of a string.
- * @a: Pointer to a string
- * @i: Iterator
- *
- * Return: Length of the string (int)
+ * is_palindrome - palindrome
+ * @s: pointer to string
+ * Return: recursion
  */
-int strlengr(char *a, int i)
+
+int is_palindrome(char *s)
 {
-	if (a[i] != '\0')
-		return (strlengr(a, ++i));
-	return (i);
+	int len = _strlen_recursion(s);
+
+	return (p1(s, len - 1));
 }

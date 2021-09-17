@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- *main - main function
+ *main - prints number
  *@argc: argument count
  *@argv: argument vector
  *Return: 0
@@ -9,6 +9,6 @@
 
 int main(int argc, char *argv[])
 {
-	printf("%s\n", argv[argc - 1]);
+	printf("%d\n", argc);
 	return (0);
 }

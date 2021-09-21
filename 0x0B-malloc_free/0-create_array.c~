@@ -1,0 +1,10 @@
+#include "main.h"
+#include <stdio.h>
+
+/**
+ *create_array - creates array
+ *@size: size
+ *@c: array
+ *Return: null or pointer
+ */
+

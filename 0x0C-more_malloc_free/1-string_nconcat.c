@@ -32,14 +32,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 
 	if (n < j)
-		k = i + n + 1;
+		k = i + n;
 
 	if (n >= j)
-		k = i + j + 1;
+		k = i + j;
 
-	ptr = malloc(sizeof(char) * k);
+	ptr = malloc(sizeof(char) * k + 1);
 
 	if (ptr == NULL)
 		return (NULL);
+
 	return (ptr);
 }

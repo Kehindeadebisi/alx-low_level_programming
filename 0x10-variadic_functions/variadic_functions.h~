@@ -1,0 +1,6 @@
+#ifndef VARIADIC_HEADER_
+#define VARIADIC_HEADER_
+
+int sum_them_all(const unsigned int n, ...);
+
+#endif

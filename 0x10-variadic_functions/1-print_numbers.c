@@ -5,7 +5,7 @@
 
 /**
  *print_numbers - ....
- *@seperator: seperates
+ *@separator: seperates
  *@n: ....
  *Return: 0
  */

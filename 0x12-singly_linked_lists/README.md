@@ -1,0 +1,1 @@
+Thiss directory is for singly linked lists in c

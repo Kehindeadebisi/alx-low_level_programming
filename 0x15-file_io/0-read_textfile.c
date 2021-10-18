@@ -1,32 +1,31 @@
 #include "main.h"
 
 /**
- *read_textfile - reads textfile
- *@filename: file
- *@letters: number of letters to be read and printed
- *
- *Return: 0
- */
-
+  * read_textfile - ...
+  * @filename: The source file
+  * @letters: Number of letters to reads and prints
+  *
+  * Return: ...
+  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	void *buf;
-	size_t n;
+	int fd, readed;
+	char *buff = malloc(sizeof(char *) * letters);
 
-
-	fd = open("filename", O_RDONLY);
-
-	if (fd == -1 || filename == NULL)
+	if (!buff)
 		return (0);
 
-	read(fd, buf, n);
+	if (!filename)
+		return (0);
 
-	while (n != '\0')
-	{
-		n++;
-		_putchar(n);
-	}
+	fd = open(filename, O_RDONLY, 0600);
+	if (fd == -1)
+		return (0);
 
-	return (letters);
+	readed = read(fd, buff, letters);
+	write(STDOUT_FILENO, buff, readed);
+
+	free(buff);
+	close(fd);
+	return (readed);
 }

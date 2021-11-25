@@ -2,7 +2,7 @@
 /**
  *add_dnodeint - adds node at the beginning
  *@head: points to head
- *n: new element
+ *@n: new element
  *Return: adress of new element
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
